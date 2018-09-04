@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+        // TODO: do they learn floats or doubles? Both?
         float baseDamagePickachu;
         int effectiveProcentPickachu;
         float resultingDamagePickachu;
@@ -19,12 +20,13 @@ public class Main {
         System.out.print("Enter Pickachu's base damage: ");
         baseDamagePickachu = input.nextFloat();
 
-        System.out.print("Enter effective Pickachu's attack is in percent: ");
+        System.out.print("Enter how effective Pickachu's attack is in percent: ");
         effectiveProcentPickachu = input.nextInt();
 
         resultingDamagePickachu = ((baseDamagePickachu / 100) * effectiveProcentPickachu);
         currentHealth = MAX_HEALTH - resultingDamagePickachu;
-        System.out.println("Pickachu deals " + resultingDamagePickachu + " damage.\n"+
+        System.out.println("The other pokemon starts with " + MAX_HEALTH + " health.\n" +
+                "Pickachu deals " + resultingDamagePickachu + " damage.\n"+
                 "The other pokemon is left with " + currentHealth + " health.");
     }
 }
