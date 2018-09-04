@@ -11,8 +11,8 @@ public class Main {
         int effectiveProcentPickachu;
         float resultingDamagePickachu;
 
-        final int maxHealth = 100;
-        float currentHealth = maxHealth;
+        final int MAX_HEALTH = 100;
+        float currentHealth = MAX_HEALTH;
 
         Scanner input = new Scanner(System.in);
 
@@ -23,7 +23,7 @@ public class Main {
         effectiveProcentPickachu = input.nextInt();
 
         resultingDamagePickachu = ((baseDamagePickachu / 100) * effectiveProcentPickachu);
-        currentHealth = maxHealth - resultingDamagePickachu;
+        currentHealth = MAX_HEALTH - resultingDamagePickachu;
         System.out.println("Pickachu deals " + resultingDamagePickachu + " damage.\n"+
                 "The other pokemon is left with " + currentHealth + " health.");
     }
