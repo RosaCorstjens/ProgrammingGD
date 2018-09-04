@@ -7,15 +7,15 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        final String ATTACK_1_PICKACHU = "Thunder Shock";
-        final String ATTACK_2_PICKACHU = "Electro Ball";
-        final String ATTACK_3_PICKACHU = "Thunder Wave";
-        final String ATTACK_4_PICKACHU = "Spark";
+        final String ATTACK_0_PICKACHU = "Thunder Shock";
+        final String ATTACK_1_PICKACHU = "Electro Ball";
+        final String ATTACK_2_PICKACHU = "Thunder Wave";
+        final String ATTACK_3_PICKACHU = "Spark";
 
+        double powerAttack0Pickachu;
         double powerAttack1Pickachu;
         double powerAttack2Pickachu;
         double powerAttack3Pickachu;
-        double powerAttack4Pickachu;
 
         final double BASE_HEALTH_PICKACHU = 35;
         final double BASE_ATTACK_PICKACHU = 55;
@@ -24,15 +24,15 @@ public class Main {
         double attackPickachu;
         int levelPickachu;
 
-        final String ATTACK_1_VOLTORB = "Tackle";
-        final String ATTACK_2_VOLTORB = "Spark";
-        final String ATTACK_3_VOLTORB = "Charge Beam";
-        final String ATTACK_4_VOLTORB = "Rollout";
+        final String ATTACK_0_VOLTORB = "Tackle";
+        final String ATTACK_1_VOLTORB = "Spark";
+        final String ATTACK_2_VOLTORB = "Charge Beam";
+        final String ATTACK_3_VOLTORB = "Rollout";
 
+        double powerAttack0Voltorb;
         double powerAttack1Voltorb;
         double powerAttack2Voltorb;
         double powerAttack3Voltorb;
-        double powerAttack4Voltorb;
 
         final double BASE_HEALTH_VOLTORB = 40;
         final double BASE_ATTACK_VOLTORB = 30;
@@ -49,6 +49,7 @@ public class Main {
 
         // calculate stats based on level
         // (simplified) formula: floor(floor(2*base)*level/100+5)
+        // TODO: improve
         healthPickachu = Math.floor(Math.floor(2 * BASE_HEALTH_PICKACHU) * levelPickachu / 100 + 5);
         currentHealthPickachu = healthPickachu;
         attackPickachu = Math.floor(Math.floor(2 * BASE_ATTACK_PICKACHU) * levelPickachu / 100 + 5);
@@ -59,14 +60,14 @@ public class Main {
 
         // prompt for damage per attack
         System.out.println("Enter the power for each of Pickachu's attacks: ");
+        System.out.print(ATTACK_0_PICKACHU + ": ");
+        powerAttack0Pickachu = input.nextFloat();
         System.out.print(ATTACK_1_PICKACHU + ": ");
         powerAttack1Pickachu = input.nextFloat();
         System.out.print(ATTACK_2_PICKACHU + ": ");
         powerAttack2Pickachu = input.nextFloat();
         System.out.print(ATTACK_3_PICKACHU + ": ");
         powerAttack3Pickachu = input.nextFloat();
-        System.out.print(ATTACK_4_PICKACHU + ": ");
-        powerAttack4Pickachu = input.nextFloat();
 
 
         System.out.print("\nEnter Voltorbs level: ");
@@ -81,14 +82,14 @@ public class Main {
                 "Attack: " + attackVoltorb + "\n");
 
         System.out.println("Enter the power for each of Voltorbs attacks: ");
+        System.out.print(ATTACK_0_VOLTORB + ": ");
+        powerAttack0Voltorb = input.nextFloat();
         System.out.print(ATTACK_1_VOLTORB + ": ");
         powerAttack1Voltorb = input.nextFloat();
         System.out.print(ATTACK_2_VOLTORB + ": ");
         powerAttack2Voltorb = input.nextFloat();
         System.out.print(ATTACK_3_VOLTORB + ": ");
         powerAttack3Voltorb = input.nextFloat();
-        System.out.print(ATTACK_4_VOLTORB + ": ");
-        powerAttack4Voltorb = input.nextFloat();
 
         // TODO: pretty print the pokemon info? Should they be obligated to use \t?
 
@@ -109,6 +110,16 @@ public class Main {
         switch(chosenAttackInt){
             case 0:
                 if(turn == 0) {
+                    chosenAttackString = ATTACK_0_PICKACHU;
+                    powerChosenAttack = powerAttack0Pickachu;
+                }
+                else if(turn == 1){
+                    chosenAttackString = ATTACK_0_VOLTORB;
+                    powerChosenAttack = powerAttack0Voltorb;
+                }
+                break;
+            case 1:
+                if(turn == 0) {
                     chosenAttackString = ATTACK_1_PICKACHU;
                     powerChosenAttack = powerAttack1Pickachu;
                 }
@@ -117,7 +128,7 @@ public class Main {
                     powerChosenAttack = powerAttack1Voltorb;
                 }
                 break;
-            case 1:
+            case 2:
                 if(turn == 0) {
                     chosenAttackString = ATTACK_2_PICKACHU;
                     powerChosenAttack = powerAttack2Pickachu;
@@ -127,7 +138,7 @@ public class Main {
                     powerChosenAttack = powerAttack2Voltorb;
                 }
                 break;
-            case 2:
+            case 3:
                 if(turn == 0) {
                     chosenAttackString = ATTACK_3_PICKACHU;
                     powerChosenAttack = powerAttack3Pickachu;
@@ -137,27 +148,18 @@ public class Main {
                     powerChosenAttack = powerAttack3Voltorb;
                 }
                 break;
-            case 3:
-                if(turn == 0) {
-                    chosenAttackString = ATTACK_4_PICKACHU;
-                    powerChosenAttack = powerAttack4Pickachu;
-                }
-                else if(turn == 1){
-                    chosenAttackString = ATTACK_4_VOLTORB;
-                    powerChosenAttack = powerAttack4Voltorb;
-                }
-                break;
         }
 
         // picka
         if(turn == 0){
             // calculate damage
             // formula: ((((2 * level / 5) + 2) * power * attack) / 50) + 2
+            // TODO: improve
             double resultingDamage = ((((2 * levelPickachu / 5) + 2) * powerChosenAttack * attackPickachu) / 50) + 2;
             currentHealthVoltorb -= resultingDamage;
 
             // print results
-            System.out.println("Pickachu uses " + chosenAttackString + " against Voltorb! \n" +
+            System.out.println("\nPickachu uses " + chosenAttackString + " against Voltorb! \n" +
                     "Pickachu deals " + resultingDamage + " damage! \n" +
                     "Voltorb is left with " + currentHealthVoltorb + " health.");
         }
@@ -169,7 +171,7 @@ public class Main {
             currentHealthPickachu -= resultingDamage;
 
             // print results
-            System.out.println("Voltorb uses " + chosenAttackString + " against Pickachu! \n" +
+            System.out.println("\nVoltorb uses " + chosenAttackString + " against Pickachu! \n" +
                     "Voltorb deals " + resultingDamage + " damage! \n" +
                     "Pickachu is left with " + currentHealthPickachu + " health.");
         }
