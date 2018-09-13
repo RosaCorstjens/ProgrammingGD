@@ -7,35 +7,34 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        // TODO: do they learn floats or doubles? Both?
-        float baseDamagePickachu;
-        int effectiveProcentPickachu;
-        float resultingDamagePickachu;
+        float basisDamagePickachu;
+        int effectivititeitProcentPickachu;
+        float resulterendeDamagePickachu;
 
-        final int MAX_HEALTH = 100;
-        float currentHealth = MAX_HEALTH;
+        final int TOTALE_HP = 100;
+        float actueleHP = TOTALE_HP;
 
-        int totalAmountOfAttacks;
-        float totalAmountOfDamage;
+        int totaalAantalAttacks;
+        float totaalAantalDamage;
 
         Scanner input = new Scanner(System.in);
 
-        System.out.print("Enter Pickachu's base damage: ");
-        baseDamagePickachu = input.nextFloat();
+        System.out.print("Pickachu's basis damage: ");
+        basisDamagePickachu = input.nextFloat();
 
-        System.out.print("Enter how effective Pickachu's attack is in percent: ");
-        effectiveProcentPickachu = input.nextInt();
+        System.out.print("Effectiviteit van Pickachu's attack in procent: ");
+        effectivititeitProcentPickachu = input.nextInt();
 
-        resultingDamagePickachu = ((baseDamagePickachu / 100) * effectiveProcentPickachu);
-        currentHealth = MAX_HEALTH - resultingDamagePickachu;
-        System.out.println("\nThe other pokemon starts with " + MAX_HEALTH + " health.\n" +
-                "Pickachu deals " + resultingDamagePickachu + " damage.\n"+
-                "The other pokemon is left with " + currentHealth + " health.");
+        resulterendeDamagePickachu = ((basisDamagePickachu / 100) * effectivititeitProcentPickachu);
+        actueleHP = TOTALE_HP - resulterendeDamagePickachu;
+        System.out.println("\nDe andere Pokémon start met " + TOTALE_HP + " HP.\n" +
+                "Pickachu doet " + resulterendeDamagePickachu + " damage.\n"+
+                "De andere Pokémon houdt " + actueleHP + " HP over.");
 
-        totalAmountOfAttacks = (int)Math.ceil(MAX_HEALTH / resultingDamagePickachu);
-        totalAmountOfDamage = totalAmountOfAttacks * resultingDamagePickachu;
+        totaalAantalAttacks = (int)Math.ceil(TOTALE_HP / resulterendeDamagePickachu);
+        totaalAantalDamage = totaalAantalAttacks * resulterendeDamagePickachu;
 
-        System.out.println("\nPickachu would need to attack " + totalAmountOfAttacks + " times to defeat the other pokemon.\n"+
-                "Pickachu would then deal " + totalAmountOfDamage + " damage.");
+        System.out.println("\nPickachu moet " + totaalAantalAttacks + " keer aanvallen om de andere Pokémon te verslaan.\n"+
+                "Pickachu zou dan in totaal " + totaalAantalDamage + " damage doen.");
     }
 }
