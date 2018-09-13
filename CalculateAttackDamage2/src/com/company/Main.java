@@ -7,175 +7,161 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        final String ATTACK_0_PICKACHU = "Thunder Shock";
-        final String ATTACK_1_PICKACHU = "Electro Ball";
-        final String ATTACK_2_PICKACHU = "Thunder Wave";
-        final String ATTACK_3_PICKACHU = "Spark";
+        final String NAME_PIKACHU = "Pikachu";
+        final String ATTACK_PIKACHU = "Thunder shock";
+        final double POWER_ATTACK_PIKACHU = 40;
+        final double BASE_HEALTH_PIKACHU = 35;
+        final double BASE_ATTACK_PIKACHU = 55;
+        double healthPikachu;
+        double currentHealthPikachu;
+        double attackPikachu;
+        int levelPikachu;
 
-        double powerAttack0Pickachu;
-        double powerAttack1Pickachu;
-        double powerAttack2Pickachu;
-        double powerAttack3Pickachu;
+        final String NAME_BULBASAUR = "Bulbasaur";
+        final String ATTACK_BULBASAUR = "Vine whip";
+        final double POWER_ATTACK_BULBASAUR = 45;
+        final double BASE_HEALTH_BULBASAUR = 45;
+        final double BASE_ATTACK_BULBASAUR = 49;
+        double healthBulbasaur;
+        double attackBulbasaur;
+        int levelBulbasaur;
 
-        final double BASE_HEALTH_PICKACHU = 35;
-        final double BASE_ATTACK_PICKACHU = 55;
-        double healthPickachu;
-        double currentHealthPickachu;
-        double attackPickachu;
-        int levelPickachu;
+        final String NAME_SQUIRTLE = "Squirtle";
+        final String ATTACK_SQUIRTLE = "Bubble";
+        final double POWER_ATTACK_SQUIRTLE = 40;
+        final double BASE_HEALTH_SQUIRTLE = 44;
+        final double BASE_ATTACK_SQUIRTLE = 48;
+        double healthSquirtle;
+        double attackSquirtle;
+        int levelSquirtle;
 
-        final String ATTACK_0_VOLTORB = "Tackle";
-        final String ATTACK_1_VOLTORB = "Spark";
-        final String ATTACK_2_VOLTORB = "Charge Beam";
-        final String ATTACK_3_VOLTORB = "Rollout";
+        final String NAME_CHARMANDER = "Charmander";
+        final String ATTACK_CHARMANDER = "Ember";
+        final double POWER_ATTACK_CHARMANER = 40;
+        final double BASE_HEALTH_CHARMANDER = 39;
+        final double BASE_ATTACK_CHARMANDER = 52;
+        double healthCharmander;
+        double attackCharmander;
+        int levelCharmander;
 
-        double powerAttack0Voltorb;
-        double powerAttack1Voltorb;
-        double powerAttack2Voltorb;
-        double powerAttack3Voltorb;
-
-        final double BASE_HEALTH_VOLTORB = 40;
-        final double BASE_ATTACK_VOLTORB = 30;
-        double healthVoltorb;
-        double currentHealthVoltorb;
-        double attackVoltorb;
-        int levelVoltorb;
+        final String NAME_PIDGEY = "Pidgey";
+        final String ATTACK_PIDGEY = "Quick Attack";
+        final double POWER_ATTACK_PIDGEY = 40;
+        final double BASE_HEALTH_PIDGEY = 40;
+        final double BASE_ATTACK_PIDGEY = 45;
+        double healthPidgey;
+        double attackPidgey;
+        int levelPidgey;
 
         Scanner input = new Scanner(System.in);
 
-        // prompt for level
-        System.out.print("Enter Pickachu's level: ");
-        levelPickachu = input.nextInt();
+        // prompt for levels
+        System.out.println("Enter the each Pokémons level: ");
+
+        System.out.print(NAME_PIKACHU + ": ");
+        levelPikachu = input.nextInt();
+
+        System.out.print(NAME_BULBASAUR + ": ");
+        levelBulbasaur = input.nextInt();
+
+        System.out.print(NAME_SQUIRTLE + ": ");
+        levelSquirtle = input.nextInt();
+
+        System.out.print(NAME_CHARMANDER + ": ");
+        levelCharmander = input.nextInt();
+
+        System.out.print(NAME_PIDGEY + ": ");
+        levelPidgey = input.nextInt();
 
         // calculate stats based on level
-        // (simplified) formula: floor(floor(2*base)*level/100+5)
-        // TODO: improve
-        healthPickachu = Math.floor(Math.floor(2 * BASE_HEALTH_PICKACHU) * levelPickachu / 100 + 5);
-        currentHealthPickachu = healthPickachu;
-        attackPickachu = Math.floor(Math.floor(2 * BASE_ATTACK_PICKACHU) * levelPickachu / 100 + 5);
+        // (simplified) formula HP: floor(floor(2*base)*level/100+level+10)
+        // (simplified) formula attack: floor(floor(2*base)*level/100+5)
+        healthPikachu = Math.floor(Math.floor(2 * BASE_HEALTH_PIKACHU) * levelPikachu / 100 + levelPikachu + 10);
+        attackPikachu = Math.floor(Math.floor(2 * BASE_ATTACK_PIKACHU) * levelPikachu / 100 + 5);
 
-        System.out.println("Pickachu's stats are: \n"+
-                "Health: " + healthPickachu + "\n"+
-                "Attack: " + attackPickachu + "\n");
+        healthBulbasaur = Math.floor(Math.floor(2 * BASE_HEALTH_BULBASAUR) * levelBulbasaur / 100 + levelBulbasaur + 10);
+        attackBulbasaur = Math.floor(Math.floor(2 * BASE_ATTACK_BULBASAUR) * levelBulbasaur / 100 + 5);
 
-        // prompt for damage per attack
-        System.out.println("Enter the power for each of Pickachu's attacks: ");
-        System.out.print(ATTACK_0_PICKACHU + ": ");
-        powerAttack0Pickachu = input.nextFloat();
-        System.out.print(ATTACK_1_PICKACHU + ": ");
-        powerAttack1Pickachu = input.nextFloat();
-        System.out.print(ATTACK_2_PICKACHU + ": ");
-        powerAttack2Pickachu = input.nextFloat();
-        System.out.print(ATTACK_3_PICKACHU + ": ");
-        powerAttack3Pickachu = input.nextFloat();
+        healthSquirtle = Math.floor(Math.floor(2 * BASE_HEALTH_SQUIRTLE) * levelSquirtle / 100 + levelSquirtle + 10);
+        attackSquirtle = Math.floor(Math.floor(2 * BASE_ATTACK_SQUIRTLE) * levelSquirtle / 100 + 5);
 
+        healthCharmander = Math.floor(Math.floor(2 * BASE_HEALTH_CHARMANDER) * levelCharmander / 100 + levelCharmander + 10);
+        attackCharmander = Math.floor(Math.floor(2 * BASE_ATTACK_CHARMANDER) * levelCharmander / 100 + 5);
 
-        System.out.print("\nEnter Voltorbs level: ");
-        levelVoltorb = input.nextInt();
+        healthPidgey = Math.floor(Math.floor(2 * BASE_HEALTH_PIDGEY) * levelPidgey / 100 + levelPidgey + 10);
+        attackPidgey = Math.floor(Math.floor(2 * BASE_ATTACK_PIDGEY) * levelPidgey / 100 + 5);
 
-        healthVoltorb = Math.floor(Math.floor(2 * BASE_HEALTH_VOLTORB) * levelVoltorb / 100 + 5);
-        currentHealthVoltorb = healthVoltorb;
-        attackVoltorb = Math.floor(Math.floor(2 * BASE_ATTACK_VOLTORB) * levelVoltorb / 100 + 5);
+        // print all stats
+        System.out.println("\n" + NAME_PIKACHU + "\t\t Level: " + levelPikachu + "\t Attack: " + attackPikachu + "\t HP: " + healthPikachu + "\n" +
+                            NAME_BULBASAUR + "\t Level: " + levelBulbasaur + "\t Attack: " + attackBulbasaur + "\t HP: " + healthBulbasaur + "\n" +
+                            NAME_SQUIRTLE + "\t Level: " + levelSquirtle + "\t Attack: " + attackSquirtle + "\t HP: " + healthSquirtle + "\n" +
+                            NAME_CHARMANDER + "\t Level: " + levelCharmander + "\t Attack: " + attackCharmander + "\t HP: " + healthCharmander + "\n" +
+                            NAME_PIDGEY + "\t\t Level: " + levelPidgey + "\t Attack: " + attackPidgey + "\t HP: " + healthPidgey);
 
-        System.out.println("Voltorbs stats are: \n"+
-                "Health: " + healthVoltorb + "\n"+
-                "Attack: " + attackVoltorb + "\n");
+        // some text to set context
+        // choose pokemon to attack with
+        double healthCaterpie = 30;
+        System.out.println("\nA wild Caterpie appeared! He has " + healthCaterpie + " HP. What Pokémon do you want to use to attack him? " + "\n" +
+                            "[0] - " + NAME_PIKACHU + "\n" +
+                            "[1] - " + NAME_BULBASAUR + "\n" +
+                            "[2] - " + NAME_SQUIRTLE + "\n" +
+                            "[3] - " + NAME_CHARMANDER + "\n" +
+                            "[4] - " + NAME_PIDGEY + "\n");
 
-        System.out.println("Enter the power for each of Voltorbs attacks: ");
-        System.out.print(ATTACK_0_VOLTORB + ": ");
-        powerAttack0Voltorb = input.nextFloat();
-        System.out.print(ATTACK_1_VOLTORB + ": ");
-        powerAttack1Voltorb = input.nextFloat();
-        System.out.print(ATTACK_2_VOLTORB + ": ");
-        powerAttack2Voltorb = input.nextFloat();
-        System.out.print(ATTACK_3_VOLTORB + ": ");
-        powerAttack3Voltorb = input.nextFloat();
+        int chosenPokemon = input.nextInt();
 
-        // TODO: pretty print the pokemon info? Should they be obligated to use \t?
+        // ensure correct input.
+        // for the fast students: can you make it so that the program doesn't quit, but prompts again?
+        if(chosenPokemon < 0 || chosenPokemon > 4){
+            System.out.println("ERROR! This input is not valid...");
+            return;
+        }
 
-        // TODO: what to do if the input is not correct? They can't do a while loop to prompt till correct, right?
-        System.out.print("\nWho is attacking? Enter 0 for Pickachu, enter 1 for Voltorb: ");
-        int turn = input.nextInt();
-
-        // TODO: we cannot use a terminal operator, can we?
-        if(turn == 0)
-            System.out.print("What attack is Pickachu using? Enter a number between 0 and 3 to select an attack: ");
-        else
-            System.out.print("What attack is Voltorb using? Enter a number between 0 and 3 to select an attack: ");
-
-        int chosenAttackInt = input.nextInt();
-        String chosenAttackString = "";
-        double powerChosenAttack = 0;
-
-        switch(chosenAttackInt){
+        // calculate resulting damage and print results
+        // formula: (((level / 5 + 2) * power * attack) / 100) + 2
+        // For fast students: can you define a method which prints the results to which you can pass parameters
+        double resultingDamage = 0;
+        switch(chosenPokemon){
             case 0:
-                if(turn == 0) {
-                    chosenAttackString = ATTACK_0_PICKACHU;
-                    powerChosenAttack = powerAttack0Pickachu;
-                }
-                else if(turn == 1){
-                    chosenAttackString = ATTACK_0_VOLTORB;
-                    powerChosenAttack = powerAttack0Voltorb;
-                }
+                resultingDamage = (((levelPikachu / 5 + 2) * POWER_ATTACK_PIKACHU * attackPikachu) / 100) + 2;
+                healthCaterpie -= resultingDamage;
+
+                System.out.println("\n" + NAME_PIKACHU + "uses " + ATTACK_PIKACHU + " against Caterpie! \n" +
+                        NAME_PIKACHU + " deals " + resultingDamage + " damage! \n" +
+                        "Caterpie is left with " + healthCaterpie + " health.");
                 break;
             case 1:
-                if(turn == 0) {
-                    chosenAttackString = ATTACK_1_PICKACHU;
-                    powerChosenAttack = powerAttack1Pickachu;
-                }
-                else if(turn == 1){
-                    chosenAttackString = ATTACK_1_VOLTORB;
-                    powerChosenAttack = powerAttack1Voltorb;
-                }
+                resultingDamage = (((levelBulbasaur / 5 + 2) * POWER_ATTACK_BULBASAUR * attackBulbasaur) / 100) + 2;
+                healthCaterpie -= resultingDamage;
+
+                System.out.println("\n" + NAME_BULBASAUR + "uses " + ATTACK_BULBASAUR + " against Caterpie! \n" +
+                        NAME_BULBASAUR + " deals " + resultingDamage + " damage! \n" +
+                        "Caterpie is left with " + healthCaterpie + " health.");
                 break;
             case 2:
-                if(turn == 0) {
-                    chosenAttackString = ATTACK_2_PICKACHU;
-                    powerChosenAttack = powerAttack2Pickachu;
-                }
-                else if(turn == 1){
-                    chosenAttackString = ATTACK_2_VOLTORB;
-                    powerChosenAttack = powerAttack2Voltorb;
-                }
+                resultingDamage = (((levelSquirtle / 5 + 2) * POWER_ATTACK_SQUIRTLE * attackSquirtle) / 100) + 2;
+                healthCaterpie -= resultingDamage;
+
+                System.out.println("\n" + NAME_SQUIRTLE + "uses " + ATTACK_SQUIRTLE + " against Caterpie! \n" +
+                        NAME_SQUIRTLE + " deals " + resultingDamage + " damage! \n" +
+                        "Caterpie is left with " + healthCaterpie + " health.");
                 break;
             case 3:
-                if(turn == 0) {
-                    chosenAttackString = ATTACK_3_PICKACHU;
-                    powerChosenAttack = powerAttack3Pickachu;
-                }
-                else if(turn == 1){
-                    chosenAttackString = ATTACK_3_VOLTORB;
-                    powerChosenAttack = powerAttack3Voltorb;
-                }
+                resultingDamage = (((levelCharmander / 5 + 2) * POWER_ATTACK_CHARMANER * attackCharmander) / 100) + 2;
+                healthCaterpie -= resultingDamage;
+
+                System.out.println("\n" + NAME_CHARMANDER + "uses " + ATTACK_CHARMANDER + " against Caterpie! \n" +
+                        NAME_CHARMANDER + " deals " + resultingDamage + " damage! \n" +
+                        "Caterpie is left with " + healthCaterpie + " health.");
+                break;
+            case 4:
+                resultingDamage = (((levelPidgey / 5 + 2) * POWER_ATTACK_PIDGEY * attackPidgey) / 100) + 2;
+                healthCaterpie -= resultingDamage;
+
+                System.out.println("\n" + NAME_PIDGEY + "uses " + ATTACK_PIDGEY + " against Caterpie! \n" +
+                        NAME_PIDGEY + " deals " + resultingDamage + " damage! \n" +
+                        "Caterpie is left with " + healthCaterpie + " health.");
                 break;
         }
-
-        // picka
-        if(turn == 0){
-            // calculate damage
-            // formula: ((((2 * level / 5) + 2) * power * attack) / 50) + 2
-            // TODO: improve
-            double resultingDamage = ((((2 * levelPickachu / 5) + 2) * powerChosenAttack * attackPickachu) / 50) + 2;
-            currentHealthVoltorb -= resultingDamage;
-
-            // print results
-            System.out.println("\nPickachu uses " + chosenAttackString + " against Voltorb! \n" +
-                    "Pickachu deals " + resultingDamage + " damage! \n" +
-                    "Voltorb is left with " + currentHealthVoltorb + " health.");
-        }
-        // voltorb
-        else if(turn == 1) {
-            // calculate damage
-            // formula: ((((2 * level / 5) + 2) * power * attack) / 50) + 2
-            double resultingDamage = ((((2 * levelVoltorb / 5) + 2) * powerChosenAttack * attackVoltorb) / 50) + 2;
-            currentHealthPickachu -= resultingDamage;
-
-            // print results
-            System.out.println("\nVoltorb uses " + chosenAttackString + " against Pickachu! \n" +
-                    "Voltorb deals " + resultingDamage + " damage! \n" +
-                    "Pickachu is left with " + currentHealthPickachu + " health.");
-        }
-
     }
-
 }
