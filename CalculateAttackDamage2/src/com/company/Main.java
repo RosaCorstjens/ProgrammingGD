@@ -122,7 +122,7 @@ public class Main {
         double resultingDamage = 0;
         switch(chosenPokemon){
             case 0:
-                resultingDamage = Math.round((((((levelPikachu / 5f + 2) * POWER_ATTACK_PIKACHU * attackPikachu) / 100) + 2) * 100 ) / 100);
+                resultingDamage = Math.round((((((levelPikachu / 20f + 2) * POWER_ATTACK_PIKACHU * attackPikachu) / 200) + 2) * 100 ) / 100);
                 healthCaterpie -= resultingDamage;
 
                 System.out.println("\n" + NAME_PIKACHU + " uses " + ATTACK_PIKACHU + " against Caterpie! \n" +
@@ -130,7 +130,7 @@ public class Main {
                         "Caterpie is left with " + healthCaterpie + " health.");
                 break;
             case 1:
-                resultingDamage = Math.round((((((levelBulbasaur / 5f + 2) * POWER_ATTACK_BULBASAUR * attackBulbasaur) / 100) + 2) * 100 ) / 100);
+                resultingDamage = Math.round((((((levelBulbasaur / 20f + 2) * POWER_ATTACK_BULBASAUR * attackBulbasaur) / 200) + 2) * 100 ) / 100);
                 healthCaterpie -= resultingDamage;
 
                 System.out.println("\n" + NAME_BULBASAUR + " uses " + ATTACK_BULBASAUR + " against Caterpie! \n" +
@@ -146,7 +146,7 @@ public class Main {
                         "Caterpie is left with " + healthCaterpie + " health.");
                 break;
             case 3:
-                resultingDamage = Math.round((((((levelCharmander / 5f + 2) * POWER_ATTACK_CHARMANER * attackCharmander) / 100) + 2) * 100 ) / 100);
+                resultingDamage = Math.round((((((levelCharmander / 20f + 2) * POWER_ATTACK_CHARMANER * attackCharmander) / 200) + 2) * 100 ) / 100);
                 healthCaterpie -= resultingDamage;
 
                 System.out.println("\n" + NAME_CHARMANDER + " uses " + ATTACK_CHARMANDER + " against Caterpie! \n" +
@@ -154,7 +154,7 @@ public class Main {
                         "Caterpie is left with " + healthCaterpie + " health.");
                 break;
             case 4:
-                resultingDamage = Math.round((((((levelPidgey / 5f + 2) * POWER_ATTACK_PIDGEY * attackPidgey) / 100) + 2) * 100 ) / 100);
+                resultingDamage = Math.round((((((levelPidgey / 20f + 2) * POWER_ATTACK_PIDGEY * attackPidgey) / 200) + 2) * 100 ) / 100);
                 healthCaterpie -= resultingDamage;
 
                 System.out.println("\n" + NAME_PIDGEY + " uses " + ATTACK_PIDGEY + " against Caterpie! \n" +
