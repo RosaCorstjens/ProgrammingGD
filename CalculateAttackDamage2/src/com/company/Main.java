@@ -138,7 +138,7 @@ public class Main {
                         "Caterpie is left with " + healthCaterpie + " health.");
                 break;
             case 2:
-                resultingDamage = Math.round((((((levelSquirtle / 5f + 2) * POWER_ATTACK_SQUIRTLE * attackSquirtle) / 100) + 2) * 100 ) / 100);
+                resultingDamage = Math.round((((((levelSquirtle / 20f + 2) * POWER_ATTACK_SQUIRTLE * attackSquirtle) / 200) + 2) * 100 ) / 100);
                 healthCaterpie -= resultingDamage;
 
                 System.out.println("\n" + NAME_SQUIRTLE + " uses " + ATTACK_SQUIRTLE + " against Caterpie! \n" +
