@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/CalculateAttackDamage2.iml" filepath="$PROJECT_DIR$/CalculateAttackDamage2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TurnLoop.iml" filepath="$PROJECT_DIR$/TurnLoop.iml" />
     </modules>
   </component>
 </project>

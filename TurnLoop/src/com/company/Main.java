@@ -125,7 +125,7 @@ public class Main {
             }
 
             // wait for enter!
-            System.out.println("Press enter to continue.");
+            System.out.println("\nPress enter to continue.");
             input.nextLine();
         }
 
